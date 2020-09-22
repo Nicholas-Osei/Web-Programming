@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" style="border: black 1px solid;" height="500" width="700"></canvas>
+    <p>
+        <input type="button" id="left" value="Move Left" onclick="Rect.update(this)">
+        <input type="button" id="right" value="Move Right" onclick="Rect.update(this)">
+    </p>
+    <p id="val"></p>
+    <script>
+        var canvas = document.getElementById("mycanvas")
+        context = canvas.getContext('2d')
+        var eh = document.getElementById("val")
+        var getal = 0
+        controller = {
+
+            // mouse or finger position
+            pointer_x: 0,
+            pointer_y: 0,
+
+            move: function (event) {
+
+                // This will give us the location of our canvas element
+                var rectangle = context.canvas.getBoundingClientRect();
+
+                // store the position of the move event inside the pointer variables
+                controller.pointer_x = event.clientX - rectangle.left;
+                controller.pointer_y = event.clientY - rectangle.top;
+
+            }
+
+        };
+        class fillRect {
+            constructor(x, y) {
+                this.x = x
+                this.y = y
+
+            }
+            draw(context) {
+                // context.clearRect(this.x,this.y,500,700)
+                context.fillStyle = "red"
+                context.fillRect(this.x, this.y, 50, 50)
+            }
+            update(obj) {
+                context.clearRect(0, 0, 700, 500)
+                var id = obj.id
+                var pff = document.getElementById(id);
+                if (pff.id == "left") {
+                    getal -= 50
+                }
+                if (pff.id == "right") {
+                    getal += 50
+                }
+                if (getal < 0) {
+                    getal = 0
+                    this.x = 0
+                    //document.write("Hey its ok")
+                }
+                if (getal > canvas.width - 50) {
+                    getal = 0
+                    this.x = 650
+                    //document.write("Hey its ok")
+                }
+                eh.innerHTML = getal
+                context.fillRect(this.x + getal, this.y, 50, 50)
+
+
+
+
+
+            }
+        }
+        var Rect = new fillRect(0, 100)
+        loop = function(time_stamp) {
+            Rect.draw(context)
+            Rect.x = controller.pointer_x-32
+            Rect.y = controller.pointer_y-32
+            window.requestAnimationFrame(loop);
+        }
+
+        
+        
+        
+        context.canvas.addEventListener("mousemove", controller.move);
+
+    </script>
+</body>
+
+</html>

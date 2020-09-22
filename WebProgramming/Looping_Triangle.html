@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function sterren()
+        {
+            //High to low
+            for (let index = 0; index <= 7; index++) {
+                for (let j = index; j < 7; j++) 
+                {
+                    document.writeln("#");
+                }
+                document.write("<br>");
+            }
+
+                //Small to high
+            for (let index = 0; index <= 7; index++) {
+                for (let j = 0; j < index; j++) 
+                {
+                    document.writeln("#");
+                }
+                document.write("<br>");
+                
+            }
+
+            //Otherside
+            for (let index = 0; index <= 7; index++) {
+                for (let j = 7; j > index; j--) 
+                {
+                    document.writeln("#");
+                }
+                document.write("<br>");
+                
+            }
+        }
+
+        sterren();
+
+    </script>
+
+</body>
+</html>

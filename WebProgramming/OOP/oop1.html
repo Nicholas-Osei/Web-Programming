@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function eh(pff,ll)
+        {
+            this.name = pff;
+            this.prototype.year=  ll;
+            this.prototype.se = function() {
+                alert(this.name +" : " + this.year);
+            }
+            
+        }
+        function sa() {
+           // alert(this.name +" : " + this.year);
+            
+        }
+        // var lol = new Array();
+        // lol.push(new eh("Nico",1998))
+        // lol.push(new eh("Osei",1999))
+        // lol.push(new eh("Boateng",2000))
+        // lol.push(new eh("Don",2001))
+        // lol.push(new eh("Junior",2002))
+
+
+        // for (let index = 0; index < lol.length; index++) {
+        //     lol[index].se();
+            
+        // }
+
+        var po = new eh();
+        po.name="haha";
+        po.year=1990;
+        po.se()
+
+        var pl = new eh();
+        pl.name="pl pl ";
+        pl.year=1992;
+        pl.se()
+
+        alert(po.se==pl.se);
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="clicked()" onreset="clicked()">
+
+        Niconaldo don <input type="text" id="texting" value="">
+        lol eh <input type="text" id="textin" value="">
+
+
+        <input type="button" value="hahah">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+
+
+        </button>
+       
+    </form>
+    <script>
+      function clicked()
+      {
+        var  see = document.getElementById("texting")
+        var  seen = document.getElementById("textin")
+        if(see.value == "" || seen.value == "")
+        {
+            alert("Please it is empty")
+        }
+      }
+
+    </script>
+</body>
+</html>

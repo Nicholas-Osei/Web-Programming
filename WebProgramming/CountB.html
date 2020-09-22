@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function countBs(string) {
+
+        //  let len = string.length;
+        //  document.write(len);
+        let count =0;
+         for (let index = 0; index < string.length; index++) {
+            document.write(string[index]+"<br>");
+            if(string[index]=="b" || string[index]=="B")
+            {
+                    count++;
+            }
+         }
+          return "Er zijn "+ count + " B in " + string;
+         
+     }
+     function countChar(str,st) {
+        let count =0;
+
+            for (let index = 0; index < str.length; index++) {
+            document.write(str[index]+"<br>");
+
+            if(str[index]==st)
+            {
+                count++;
+            }
+        }
+        return "Er zijn " +count+" "+st + " in " + str;
+     }
+     document.write(countBs("bbbbbbbBcbB")) ;
+     document.write(countChar("kakkerlak","k")) ;
+    </script>
+</body>
+</html>

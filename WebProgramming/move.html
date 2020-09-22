@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <div id="dvs" style="background-color: blue; width:200px ;height:300px">  </div> -->
+    <p id="ptag"></p>
+  
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+    <script> 
+        var canvas = document.getElementById("mycanvas")
+        context = canvas.getContext('2d')
+        var getal=0
+
+        context.clearRect(0,0,300,300)
+        canvas.addEventListener("mousemove",moving)
+        context.translate(100,100)
+        context.rotate(getal)
+        context.beginPath()
+        context.arc(200,200,103,0,Math.PI*2,false);
+        context.moveTo(0,0);
+        context.lineTo(0,0);        
+        context.stroke()
+        ctx.restore();
+
+        
+        function moving() {
+            getal++
+            document.getElementById("ptag").innerHTML=getal
+            
+        }
+        // var lol = document.getElementById("dvs").addEventListener("mousemove",moving)
+        // var getal=0
+        // function moving() {
+        //     getal++
+        //     document.getElementById("ptag").innerHTML=getal
+            
+        // }
+
+    </script>
+</body>
+</html>

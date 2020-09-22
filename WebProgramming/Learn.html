@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="ptag"></p>
+    <p id="ltag"></p>
+    <script>
+
+        // var yeah ="aeuio"
+        // var lol = "hey alles goedi"
+        // for (let index = 0; index < lol.length; index++) {
+        //     for (let p = 0; p < yeah.length; p++) {
+        //         if (lol[index]==yeah[p]) {
+        //             counter+=1
+        //         }
+
+        //     }
+
+        // }
+        // var yh = lol.charAt(0).toUpperCase()
+        // document.write(yh,"<br>")
+        // document.write("Er zijn ",counter," vowels")
+
+        function Recept() {
+            this.Titel
+            this.ingedrienten = ["tomato,yam"]
+            this.log = function () {
+                for (let index = 0; index < this.ingedrienten.length; index++) {
+                    document.write(this.ingedrienten[index], ",")
+
+                }
+            }
+
+
+        }
+        Recept.prototype.voegToe = function () {
+            this.ingedrienten.push("rice,oil")
+        }
+
+        var ing = new Recept()
+        
+        //ing.Titel="Pineapple"
+        ing.voegToe()
+        var eh = new Recept()
+           var element = document.getElementById("ptag")
+           element.innerHTML=ing.log()
+
+        // var element1 = document.getElementById("ltag")
+        // element1.innerHTML = eh.log()
+
+    </script>
+
+
+</body>
+
+</html>

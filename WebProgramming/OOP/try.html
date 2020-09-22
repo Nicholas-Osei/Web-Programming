@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var canvas = document.getElementById("mycanvas");
+        ctx = canvas.getContext("2d");
+        Animate();
+        var grade = 0;
+        function Animate(){
+        var currentdate = new Date();
+            ctx.clearRect(0,0,500,300);
+            grade++;
+            ctx.save();
+           
+            if(grade==canvas.width)
+            {
+                grade--;
+                ctx.translate(grade,100);
+            }
+                
+
+            ctx.translate(grade+100,100);
+            // ctx.rotate((currentdate.getSeconds()*6)*Math.PI/180);
+            //ctx.rotate(90)
+
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(0,-100);
+            ctx.stroke();
+            ctx.restore();
+
+            setTimeout(Animate,33)
+        }
+
+        
+    </script>
+</body>
+</html>

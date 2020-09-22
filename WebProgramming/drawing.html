@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <canvas id= mycanvas width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById("mycanvas")
+        context= canvas.getContext('2d')
+        //context.fillRect(0,0,100,100)
+
+        context.beginPath()
+        context.moveTo(250,0)
+        context.lineTo(0,200)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(250,0)
+        context.lineTo(500,200)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(0,200)
+        context.lineTo(500,200)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(0,200)
+        context.lineTo(0,500)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(500,200)
+        context.lineTo(500,600)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(0,500)
+        context.lineTo(1000,500)
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(150,500)
+        context.lineTo(150,0)
+        context.stroke()
+
+    </script>
+</body>
+</html>

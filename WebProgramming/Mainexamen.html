@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>Pagination</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .paginationContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+      }
+
+      .paginationContainer .paginationItem {
+        border: 1px solid gray;
+        padding: 20px;
+      }
+
+      .paginationBar {
+        margin: auto auto;
+        color: blue;
+        list-style-type: none;
+      }
+
+      .paginationBar li {
+        float: left;
+        padding: 10px;
+        border: 1px solid blue;
+        margin: 10px;
+      }
+
+      .paginationBar .active {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paginationContainer">
+      <div class="paginationContents">
+        <div class="paginationItem">
+          <h3>Pagination item 1</h3>
+          <div class="paginationItemBody">Blablabla</div>
+        </div>
+        <div class="paginationItem">
+          <h3>Pagination item 1</h3>
+          <div class="paginationItemBody">Blablabla</div>
+        </div>
+        <div class="paginationItem">
+          <h3>Pagination item 1</h3>
+          <div class="paginationItemBody">Blablabla</div>
+        </div>
+      </div>
+      <ul class="paginationBar">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+
+    <script>
+        var page=document.getElementsByClassName("paginationContainer");
+        //document.write(page)
+
+        var AllItems = document.querySelectorAll(".paginationBar li" )
+        //var all = document.getElementsByClassName("paginationBar")
+        // all.querySelectorAll("li");
+        
+       
+        // for (let index = 0; index < all.length; index++) {
+        //     document.write(all[index].innerHTML)
+        // }
+
+        var EverythinginArray=[]
+        var pagingaContents = document.querySelectorAll(".paginationContents h3" )
+        var paginaItemBody = document.getElementsByClassName("paginationItemBody");
+        for (let index = 0; index < pagingaContents.length; index++) {
+            EverythinginArray.push("Titel: "+pagingaContents[index].innerHTML+" Content:" + paginaItemBody[index].innerHTML+"<br>")
+            //document.write(EverythinginArray[index])
+        }
+
+        // for (let index = 0; index < Everything.length; index++) {
+           
+        // }
+
+        for (let index = 0; index < AllItems.length; index++) {
+            AllItems[index].addEventListener("click", function () {
+                AllItems[0].className=""
+                AllItems[1].className=""
+                AllItems[2].className=""
+
+               if(this.className=="")
+                {
+                    this.className="paginationBar active"
+                    for (let p = 0; p < EverythinginArray.length; p++) {
+                        //EverythinginArray[index].innerHTML="this.innerHTML"
+                        pagingaContents[p].innerHTML= "pagination item " +p
+                        paginaItemBody[p].innerHTML= "Pagination body "+ p
+                        
+                        
+                    }
+                    
+                }
+                else
+                {
+                    this.className=""
+                }
+            })
+
+        }
+
+
+
+
+    </script>
+  </body>
+</html>

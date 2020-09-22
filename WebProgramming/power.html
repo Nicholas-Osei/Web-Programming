@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+    
+    <script>
+        
+        var canvas = document.getElementById("mycanvas")
+        context = canvas.getContext('2d')
+        Animate()
+        var graden=0;
+        function Animate(){
+        var currentdate = new Date();
+
+        context.clearRect(0,0,500,500)
+        context.beginPath()
+        context.arc(200,200,103,0,Math.PI*2,false);
+        context.stroke()
+        context.save()
+
+        context.translate(200,200);
+        context.rotate((currentdate.getSeconds()*6)*Math.PI/180);
+
+        context.beginPath()
+        context.moveTo(0,0)
+        context.lineTo(0,70)
+        context.stroke()
+        context.restore();
+        context.save()
+
+        context.translate(200,200)
+        context.rotate((currentdate.getMinutes()*6)*Math.PI/180);
+        context.beginPath()
+        context.moveTo(0,0)
+        context.lineTo(0,70)
+        context.stroke()
+        context.restore()
+        setTimeout(Animate,33);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ha">
+
+    </p>
+
+    <form name="nico">
+        <select name="lol" >
+            <option value="1"></option>
+            <option value="2"> hahah</option>
+            <option value="hahah1">yteah</option>
+            <option value="hahah2">dsdsds</option>
+        </select>
+        <input type="button" onclick="loju()">
+    </form>
+    <script>
+        var lol = "nicoisaboyu"
+        var  tel=0
+        for (let index = 0; index < lol.length; index++) {
+            if(lol[index]=="a" || lol[index]=="e" || lol[index]=="i" || lol[index]=="o" || lol[index]=="u" )
+            {
+                tel++;
+            }
+            
+        }
+        // var yeah = lol.charAt(1).toUpperCase();
+        
+        function loju() {
+            var fetch =document.getElementById("ha").innerHTML;
+            // document.write(document.nico.lol.options[document.nico.lol.selectedIndex].index) = fetch
+
+            // alert(document.write(document.nico.lol.options[document.nico.lol.selectedIndex].text) )
+
+            if ((document.nico.lol.options[document.nico.lol.selectedIndex].text) == "hahah" )  {
+                alert("yeah bbe")
+                
+            }
+            else if((document.nico.lol.options[document.nico.lol.selectedIndex].text) == "yteah" )
+            {
+                alert("yeah -----")
+            }
+            else
+            {
+                alert("tsssss")
+            }
+            
+        }
+        
+
+        //document.getElementById("ha").innerHTML=tel
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function nico() {
+            
+        }
+        nico.prototype.say=function()
+        {
+            alert("i say ");
+        }
+
+        function junior()
+        {
+            nico.call(this);
+        }
+        junior.prototype=new nico();
+
+        // junior.prototype.constructor = junior;
+        // junior.prototype.say();
+
+        junior.prototype.say=function()
+        {
+            alert("hahah");
+        }
+
+        var lol = new junior()
+        lol.say()
+    </script>
+</body>
+</html>

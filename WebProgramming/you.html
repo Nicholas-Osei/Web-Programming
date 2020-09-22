@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("mycanvas")
+        context = canvas.getContext('2d')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        canvas.style.backgroundColor = "white"
+
+
+        class Circle {
+            constructor(x, y, rad, color, speed) {
+                this.x = x
+                this.y = y
+                this.rad = rad
+                this.color = color
+                this.speed = speed
+                this.dx = 1 * this.speed
+                this.dy = 1 * this.speed
+            }
+            draw(context) {
+
+                context.beginPath()
+                context.arc(this.x, this.y, this.rad, 0, Math.PI * 2, false)
+                context.strokeStyle = this.color
+                context.lineWidth = 20
+                context.stroke()
+            }
+            update() {
+                this.draw(context)
+                this.x += this.dx
+                this.y += this.dy
+
+                if ((this.x + this.rad) > window.innerWidth) {
+                    this.dx = -this.dx
+                }
+                if ((this.x - this.rad) < 0) {
+                    this.dx = -this.dx
+                }
+                if ((this.y + this.rad) > window.innerHeight) {
+                    this.dy = -this.dy
+                }
+                if ((this.y - this.rad) < 0) {
+                    this.dy = -this.dy
+                }
+                for (let index = 0; index < circles.length; index++) {
+                    var add = 0
+                    add+=index
+                    if ((circles[index].x + circles[index].rad) > circles[add].x + circles[add].rad) {
+                        circles[index].dy = -circles[index].dy
+                    }
+
+                }
+
+            }
+        }
+
+
+
+        var circles = []
+        for (let index = 0; index < 5; index++) {
+            let randomx = Math.random() * window.innerWidth
+            let randomy = Math.random() * window.innerHeight
+            circles.push(new Circle(randomx, randomy, 50, "blue", 10))
+            circles[index].draw(context)
+        }
+        // var lol = new Circle(randomx, randomy, 50, "blue",1)
+        // lol.draw(context)
+        // var cirl1 = new Circle(randomx+100, randomy+100, 50, "yellow",10)
+        // cirl1.draw(context)
+
+        let updating = function () {
+            requestAnimationFrame(updating)
+            context.clearRect(0, 0, window.innerWidth, window.innerHeight)
+            for (let index = 0; index < circles.length; index++) {
+                circles[index].update()
+
+            }
+
+
+        }
+        updating()
+        // var cirl1 = new Circle(120, 200, 50, "orange")
+        // cirl1.draw(context)
+    </script>
+</body>
+
+</html>

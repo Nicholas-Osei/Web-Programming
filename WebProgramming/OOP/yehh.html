@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <canvas id="can" height="500" width="500"></canvas>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        can = document.getElementById("can");
+        ctx = can.getContext("2d");
+
+        
+
+        // ctx.beginPath()
+        // ctx.moveTo(70,50)
+        // ctx.lineTo(50,70)
+        // ctx.stroke()
+        lol();
+        var grade = 0;
+        function lol ()
+        {
+            
+            var currentdate = new Date();
+            ctx.clearRect(0,0,500,300);
+            ctx.beginPath()
+            ctx.moveTo(0,100)
+            ctx.lineTo(50,0)
+            ctx.stroke()
+            ctx.save();
+           
+            
+            
+        
+            ctx.beginPath()
+            ctx.moveTo(100,100)
+            ctx.lineTo(50,0)
+            ctx.stroke()
+            
+            
+            
+            ctx.save();
+            ctx.beginPath()
+            ctx.moveTo(100,100)
+            ctx.lineTo(0,100)
+            ctx.stroke()
+        
+           
+            ctx.save();
+            ctx.beginPath()
+            ctx.moveTo(0,200)
+            ctx.lineTo(0,100)
+            ctx.stroke()
+        
+            
+            ctx.save();
+            ctx.beginPath()
+            ctx.moveTo(100,200)
+            ctx.lineTo(100,100)
+            ctx.stroke()
+
+            
+            
+            ctx.save();
+            ctx.beginPath()
+            ctx.moveTo(100,200)
+            ctx.lineTo(0,200)
+            ctx.stroke()
+            ctx.save()
+            
+            
+            
+            grade++;
+            ctx.translate(50,70);
+            ctx.rotate((currentdate.getSeconds()*6)*Math.PI/180);
+            ctx.rotate(90)
+
+        
+           
+
+            ctx.beginPath()
+            ctx.moveTo(0,0)
+            ctx.lineTo(0,-30)
+            ctx.stroke()
+            ctx.restore()
+
+
+            ctx.save()
+            ctx.translate(50,70);
+            ctx.rotate((currentdate.getSeconds()*6)*Math.PI/180);
+            ctx.rotate(90)
+            ctx.beginPath();
+            ctx.arc(200,50,40,0,Math.PI*2,false);
+            ctx.stroke();
+            ctx.restore()
+            
+           
+           
+
+            setTimeout(lol,33)
+        }
+    </script>
+</body>
+</html>

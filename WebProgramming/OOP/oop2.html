@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pTag">
+        
+    </p>
+    <script>
+
+        function Recept()
+        {
+            this.Titel;
+            this.ingredienten=new Array()
+            this.log=function()
+            {
+                document.write(this.Titel);
+                for (let index = 0; index < this.ingredienten.length; index++) {
+                    document.writeln(this.ingredienten[index]);
+                    
+                }
+            }
+            this.voegToe=function(){
+                this.ingredienten.push("ei");
+                this.ingredienten.push("bloem");
+                this.ingredienten.push("suiker");
+            }
+        }
+
+        var lol = new Recept();
+        lol.Titel="<h1> Pannekoeken </h1>";
+        lol.voegToe();
+        document.getElementById("pTag").innerText=lol.log();
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <canvas id="myCanvas" width="500"  height="500"></canvas>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var canvas = document.getElementById("myCanvas")
+        ctx = canvas.getContext("2d");
+        // ctx.beginPath();
+        // ctx.arc(250,250,150,0,Math.PI*2,false);
+        // ctx.stroke();
+
+        // ctx.beginPath();
+        // ctx.moveTo(250,270)
+        // ctx.lineTo(150,200)
+        // ctx.stroke();
+
+        // ctx.beginPath();
+        // ctx.moveTo(250,270)
+        // ctx.lineTo(150,100)
+        // ctx.stroke();
+
+
+    //         ctx.beginPath();	
+    // ctx.arc(150,150,100,0,Math.PI*2,false);				  
+    // ctx.strokeStyle = '#00ffff';
+    // ctx.fillStyle = '#008000';			
+    // ctx.stroke(); 
+    // ctx.fillStyle;
+
+    // context.fillRect(0,0,1000,500);
+
+    // var img=new Image();
+    //     img.src="pic.png";
+    //     img.onload =function()
+	// 		 {
+	// 			ctx.drawImage(img,20,0);
+				
+	// 		};		
+
+    
+    
+      
+       Animate();
+   var graden=0;
+   function Animate(){
+       var currentdate = new Date();
+      
+       
+       ctx.clearRect(0,0,300,300);
+       ctx.beginPath();
+       ctx.arc(100,100,103,0,Math.PI*2,false);
+       ctx.stroke();
+       
+       //graden++;
+       ctx.save();
+       ctx.translate(100,100);
+       ctx.rotate((currentdate.getSeconds()*6)*Math.PI/180);
+       //seconds
+       ctx.beginPath();    
+       ctx.moveTo(0,0);
+       ctx.lineTo(0,-100);        
+       ctx.stroke();
+       ctx.restore();
+       //minutes
+       ctx.save();
+       ctx.translate(100,100);
+       console.log(currentdate.getMinutes());
+       ctx.rotate((currentdate.getMinutes()*6)*Math.PI/180);
+       ctx.strokeStyle="red";
+       ctx.beginPath();    
+       ctx.moveTo(0,0);
+       ctx.lineTo(0,-90);        
+       ctx.stroke();
+       ctx.restore(); 
+
+       //uren
+        ctx.save();
+       ctx.translate(100,100);
+        console.log(currentdate.getHours());
+       ctx.rotate((currentdate.getHours()*30)*Math.PI/180);
+       ctx.strokeStyle="green";
+       ctx.beginPath();    
+       ctx.moveTo(0,0);
+       ctx.lineTo(0,-50);        
+       ctx.stroke();
+       ctx.restore();
+   
+         setTimeout(Animate,33);
+       };
+    </script>
+</body>
+</html>

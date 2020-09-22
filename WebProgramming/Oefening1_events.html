@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="change">Dit is een tekst</h1>
+
+    <a href="#" onclick="color('yellow')"  value ="0">Yellow</a>
+    <a href="#" onclick="color('Red')">Red </a>
+    <P id="Toon"></P>
+    <script>
+        var eh = 0;
+        function color(kleur)
+        {
+            // var eh = 0
+            eh++;
+            var col = document.getElementById("change");
+           
+           
+            document.getElementById("Toon").value= eh;
+            document.getElementById("Toon").innerHTML= eh;
+
+            if(document.getElementById("Toon").value % 2==0 &&  col.style.color == "yellow"  || document.getElementById("Toon").value % 2==0 &&  col.style.color == "Red")
+            {
+                col.style.color = "black";
+            }
+            else
+            {
+                col.style.color = kleur;
+            }
+            
+            
+           
+            
+
+        }
+       
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="RandomGenerator() ">
+
+    <!-- Maak een script die de achtergrond van een div laat veranderen na het klikken op de knop Verander. -->
+    <H1>Oefening 1</H1>
+    <div id="lol">
+        <p>1</p>
+    </div>
+    <button onclick="KleurChange()"> Verander
+    </button>
+<!-- ---------------------------------------------------------------------------------------- -->
+    <H1>Oefening 2</H1>
+    <div id="lol">
+        <form>
+            <input type="text" value="1" id="txt"><br>
+            <input type="button" value=Verander2 onclick="Click()" id="but">
+        </form>
+    </div>
+<!-- ---------------------------------------------------------------------------------------- -->
+    <H1>Oefening 3</H1>
+    <Div id="Div1">
+        <p>1</p>
+    </Div>
+    <Div id="Div2">
+        <p>2</p>
+    </Div>
+    <Div id="Div3">
+        <p>3</p>
+    </Div>
+
+    <button onclick="Changing()">Verander3</button>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+<H1>Oefening 4</H1>
+<table id="Tabel">
+    <tr>
+        <td>1</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>34</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>1</td>
+    </tr>
+</table>
+<button  onclick="butChange()">Klik</button>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+<H1>Oefening 5</H1>
+
+    Wat is zijn Naam : <input type="text" id="txting"><button onclick="Zoeken()">Zoeken</button>
+    <!-- <input type="button" value="Zoeken"  onclick="Zoeken()"> -->
+
+<p id="Results">
+
+</p>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+<H1>Oefening 6</H1>
+
+<p id="Ans">
+
+</p>
+
+<p id="ts">
+
+</p>
+
+
+    <script>
+        var num=0
+        function KleurChange()
+        {
+            var kleur = document.getElementById("lol");
+            // num++
+            // if(num %2 !==0)
+            // {
+            //     kleur.style.backgroundColor="yellow"
+            // }
+            // else
+            // {
+            //     kleur.style.backgroundColor="white"
+            // }
+
+            kleur.style.backgroundColor= kleur.style.backgroundColor=="yellow" ? "":"yellow"
+
+        }
+        function Click() {
+            var ver = document.getElementById("but").value;
+            document.getElementById("txt").value=ver
+        }
+
+        function Changing() {
+            var di1 = document.getElementById("Div1")
+            var di2 = document.getElementById("Div2")
+            var di3 = document.getElementById("Div3")
+            //var num =0
+            num++
+            if(num==1)
+            {
+                di1.style.backgroundColor="yellow"
+                di2.style.backgroundColor=""
+                di3.style.backgroundColor=""  
+            }
+            else if(num==2)
+            {
+                di1.style.backgroundColor=""
+                di2.style.backgroundColor="yellow"
+                di3.style.backgroundColor=""  
+            }
+            else if(num==3)
+            {
+                di1.style.backgroundColor=""
+                di2.style.backgroundColor=""
+                di3.style.backgroundColor="yellow"  
+                num=0
+            }
+        }
+        function butChange()
+        {
+            var tab = document.querySelectorAll("#Tabel td");
+
+            for (let index = 0; index < tab.length; index++) {
+                if(tab[index].innerText>10)
+                {
+                    if(tab[index].style.backgroundColor=="red")
+                    {
+                        tab[index].style.backgroundColor=""
+                    }
+                    else
+                    {
+                        tab[index].style.backgroundColor="red"
+                    }
+                    
+                }
+                
+            }
+        }
+
+        function Zoeken() {
+        var Namen = ["Nicholas","Osei","Boateng"];
+        var Geboorte = ["1998","1999","2000"];
+        var name  = document.getElementById("txting").value;
+        //document.getElementById("Results").innerHTML=name
+        for (let index = 0; index < Namen.length; index++) {
+            if(name==Namen[index])
+            {
+                var str= name + " geboorte jaar is " + Geboorte[index]
+                document.getElementById("Results").innerHTML=str
+            }
+        }
+    }
+        function RandomGenerator() 
+        {
+            var num;
+            var lol=[];
+            var hoeveel=[];
+            var count=0
+            // document.getElementById("Ans").innerHTML=num;
+
+            for (let index = 0; index < 10; index++) {
+                num = Math.floor(Math.random() * 12) + 1;
+                lol.push(num);
+            }
+            
+            var val= "<ul>";
+            for (let i = 0; i < lol.length; i++) {
+                val+= "<li>" + lol[i] + "</li>";
+                if(lol[i]==2)
+                {
+                    count++;
+                    hoeveel.push(count);
+                }
+                
+                // if(lol[i]==3)
+                // {
+                //     count++;
+                //     // counting =  hoeveel.push(count)
+                //     // count=0;
+                // }
+               
+
+            }
+           
+            
+          
+            
+            document.getElementById("Ans").innerHTML=val;
+            val+= "</ul>";
+            var counting="<ul>";
+            
+            // for (let u = 0; u < hoeveel.length; u++) {
+            //     counting +="<li>" + hoeveel[i] + "</li>";
+            // }
+            
+            document.getElementById("ts").innerHTML=hoeveel.length
+            counting+= "</ul>";
+
+       
+            
+        }
+    </script>
+</body>
+</html>

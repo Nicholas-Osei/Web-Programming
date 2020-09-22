@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="List">
+        <li>
+            1
+        </li>
+    </ul>
+
+    <script>
+
+        var node =document.createElement("li")
+        var text =document.createTextNode("2")
+        node.appendChild(text)
+
+        document.getElementById("List").appendChild(node)
+
+        var pTag =  document.createElement("p")
+        var lol = document.createTextNode("Dit is een paragraaf")
+        pTag.appendChild(lol)
+        document.body.appendChild(pTag)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .lol
+        {
+            border: 1px solid black;
+            float: left;
+            padding-bottom: 10%;
+            padding-right: 10%;
+            
+        }
+    </style>
+
+    <p class="lol">
+        <a href="#" id="Link1" onclick="clicking('Je klikte op Link 1')">Link 1</a><br>
+        <a href="#" id="Link2" onclick="clicking('Je klikte op Link 2')">Link 2</a>
+    </p>
+    <p>
+        Dit is content
+    </p>
+    <p id="show">
+        
+    </p>
+
+    <script>
+        // var yeah
+        // var ss = "Je klikte op "
+        // function clicking(ts) {
+        //     yeah = document.getElementById(ts).innerHTML;
+        //     ss +=yeah
+        //     document.getElementById("show").innerHTML=ss;
+            
+        // }
+
+        // function clicking(ts) {
+        //     document.getElementById("show").innerHTML=ts;
+        // }
+
+        function clicking(ts) {
+
+            var eh = ts.id;
+            var lol= document.getElementById(eh);
+            lol.innerHTML="hahaha"
+        }
+    
+    </script>
+    
+</body>
+</html>
